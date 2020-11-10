@@ -26,5 +26,6 @@
                 <http method="Post" uri-template="{uri.var.base}/{uri.var.type}"/>
             </endpoint>
         </call>
+        <class name="org.wso2.carbon.connector.cerner.ResponseProcessingHandler"/>
     </sequence>
 </template>

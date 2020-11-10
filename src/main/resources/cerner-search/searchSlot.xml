@@ -82,5 +82,6 @@
                       uri-template="{uri.var.base}/Slot{+uri.var.urlQuery}"/>
             </endpoint>
         </call>
+        <class name="org.wso2.carbon.connector.cerner.ResponseProcessingHandler"/>
     </sequence>
 </template>

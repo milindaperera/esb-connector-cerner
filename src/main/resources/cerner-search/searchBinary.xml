@@ -69,6 +69,7 @@
                               uri-template="{uri.var.base}/Binary/$autogen-ccd-if{+uri.var.urlQuery}"/>
                     </endpoint>
                 </call>
+                <class name="org.wso2.carbon.connector.cerner.ResponseProcessingHandler"/>
             </else>
         </filter>
     </sequence>

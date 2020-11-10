@@ -25,5 +25,6 @@
                       uri-template="{uri.var.base}/metadata"/>
             </endpoint>
         </call>
+        <class name="org.wso2.carbon.connector.cerner.ResponseProcessingHandler"/>
     </sequence>
 </template>

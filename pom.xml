@@ -35,7 +35,7 @@
         <automation.framework.utils.version>4.4.2</automation.framework.utils.version>
         <automation.framework.version>4.4.3</automation.framework.version>
         <emma.version>2.1.5320</emma.version>
-        <synapse.version>2.1.7-wso2v19</synapse.version>
+        <synapse.version>2.1.7-wso2v143</synapse.version>
         <carbon.mediation.version>4.6.19</carbon.mediation.version>
         <json.version>2.0.0.wso2v1</json.version>
         <org.testng.version>6.1.1</org.testng.version>
@@ -48,6 +48,8 @@
         <httpclient.version>4.3.6</httpclient.version>
         <carbon.mediation.library.connectors.version>4.1.0</carbon.mediation.library.connectors.version>
         <org.json.version>20080701</org.json.version>
+        <httpclient.wso2.version>${httpclient.version}.wso2v2</httpclient.wso2.version>
+        <com.google.code.gson.version>2.8.5</com.google.code.gson.version>
     </properties>
 
     <dependencies>
@@ -204,6 +206,16 @@
             <artifactId>integration-base</artifactId>
             <version>${integration.base.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.orbit.org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.wso2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${com.google.code.gson.version}</version>
         </dependency>
     </dependencies>
     <pluginRepositories>

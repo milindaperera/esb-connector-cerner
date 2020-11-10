@@ -106,6 +106,7 @@
                               uri-template="{uri.var.base}/Observation{+uri.var.urlQuery}"/>
                     </endpoint>
                 </call>
+                <class name="org.wso2.carbon.connector.cerner.ResponseProcessingHandler"/>
             </else>
         </filter>
     </sequence>

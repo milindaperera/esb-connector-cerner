@@ -19,12 +19,18 @@
 <template name="init" onError="fault" xmlns="http://ws.apache.org/ns/synapse">
 	<parameter name="base" description="The service Root URL"/>
 	<parameter name="accessToken" description="Access Token if secure sandbox or production url is being used"/>
+	<parameter name="clientId" description="Client ID of the registered application"/>
+	<parameter name="clientSecret" description="Client secret of the registered application"/>
+	<parameter name="scopes" description="Scope of the resources that will be accessed"/>
+	<parameter name="tokenEndpoint" description="Cerner token endpoint URL"/>
 	<sequence>
 		<property name="uri.var.base" expression="$func:base"/>
-		<property name="uri.var.accessToken" expression="$func:accessToken"/>
-		<filter source="boolean($ctx:uri.var.accessToken)" regex="true">
+		<property name="_CONNECTOR_INTERNAL_CERNER_CLIENT_ID_" expression="$func:clientId"/>
+		<property name="_CONNECTOR_INTERNAL_CERNER_TOKEN_ENDPOINT_" expression="$func:tokenEndpoint"/>
+		<class name="org.wso2.carbon.connector.cerner.AccessTokenHandler"/>
+		<filter source="boolean($ctx:_CONNECTOR_INTERNAL_CERNER_ACCESS_TOKEN_)" regex="true">
 			<then>
-				<header name="Authorization" expression="fn:concat('Bearer ', $ctx:uri.var.accessToken)" scope="transport"/>
+				<header name="Authorization" expression="fn:concat('Bearer ', $ctx:_CONNECTOR_INTERNAL_CERNER_ACCESS_TOKEN_)" scope="transport"/>
 			</then>
 		</filter>
 	</sequence>
